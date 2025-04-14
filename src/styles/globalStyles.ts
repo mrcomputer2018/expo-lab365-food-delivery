@@ -51,8 +51,8 @@ export const globalStyles = StyleSheet.create({
         fontWeight: "bold",
     },
     FormGroup: {
-        position: "absolute",
-        top: "30%",
+        position: "relative",
+        top: "-10%",
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         borderColor: "#999",
