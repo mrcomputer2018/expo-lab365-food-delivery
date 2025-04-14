@@ -1,22 +1,75 @@
-import { View, Text, StyleSheet } from "react-native";
+import {
+    View,
+    Text,
+    SafeAreaView,
+    Image,
+    TextInput,
+    TouchableOpacity,
+} from "react-native";
+import { globalStyles } from "../styles/globalStyles";
+import { useState } from "react";
 
 export default function LoginScreen() {
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Login</Text>
-        </View>
+        <SafeAreaView style={globalStyles.container}>
+            <View>
+                <Image
+                    source={require("../../assets/background.jpeg")}
+                    style={globalStyles.imageTop}
+                />
+            </View>
+
+            <View style={globalStyles.FormGroup}>
+                <View>
+                    <Text style={globalStyles.title}>
+                        Faça o seu login aqui!
+                    </Text>
+
+                    <Text style={globalStyles.description}>
+                        Seja bem-vindo de volta.
+                    </Text>
+                </View>
+                <View>
+                    <View style={{ marginBottom: 20 }}>
+                        <Text style={globalStyles.label}>Email</Text>
+                        <TextInput
+                            placeholder="Digite seu email..."
+                            placeholderTextColor="#999"
+                            style={globalStyles.input}
+                            keyboardType="email-address"
+                            autoCapitalize="none"
+                            autoCorrect={false}
+                            value={email}
+                            onChangeText={setEmail}
+                        />
+                    </View>
+
+                    <View>
+                        <Text style={globalStyles.label}>Senha</Text>
+                        <TextInput
+                            placeholder="Digite sua senha..."
+                            placeholderTextColor="#999"
+                            style={globalStyles.input}
+                            keyboardType="email-address"
+                            autoCapitalize="none"
+                            autoCorrect={false}
+                            value={password}
+                            onChangeText={setPassword}
+                        />
+                    </View>
+
+                    <TouchableOpacity style={globalStyles.button}>
+                        <Text
+                            style={[globalStyles.textButton, { color: "#fff" }]}
+                        >
+                            Login
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </SafeAreaView>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    title: {
-        fontSize: 32,
-        fontWeight: "bold",
-        color: "black",
-    },
-});

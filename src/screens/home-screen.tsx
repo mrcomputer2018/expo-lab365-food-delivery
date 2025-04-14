@@ -7,6 +7,7 @@ import {
     Image,
     TouchableOpacity,
 } from "react-native";
+import { globalStyles } from "../styles/globalStyles";
 
 export default function HomeScreen({ navigation }: any) {
     function handleNavigationToLogin() {
@@ -16,7 +17,7 @@ export default function HomeScreen({ navigation }: any) {
     return (
         <ImageBackground
             source={require("../../assets/background.jpeg")}
-            style={styles.container}
+            style={globalStyles.container}
         >
             <StatusBar style="light" />
 
@@ -46,11 +47,6 @@ export default function HomeScreen({ navigation }: any) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
     areaText: {
         justifyContent: "center",
         alignItems: "center",
@@ -93,5 +89,6 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 18,
         fontWeight: "bold",
+        marginTop: 16,
     },
 });
