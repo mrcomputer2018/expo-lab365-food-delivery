@@ -14,7 +14,9 @@ export default function LoginScreen() {
     const [password, setPassword] = useState<string>("");
 
     return (
-        <SafeAreaView style={globalStyles.container}>
+        <SafeAreaView
+            style={[globalStyles.container, { justifyContent: "flex-start" }]}
+        >
             <View>
                 <Image
                     source={require("../../assets/background.jpeg")}
@@ -23,7 +25,7 @@ export default function LoginScreen() {
             </View>
 
             <View style={globalStyles.FormGroup}>
-                <View>
+                <View style={{ marginTop: 20 }}>
                     <Text style={globalStyles.title}>
                         Faça o seu login aqui!
                     </Text>
@@ -33,7 +35,7 @@ export default function LoginScreen() {
                     </Text>
                 </View>
                 <View>
-                    <View style={{ marginBottom: 20 }}>
+                    <View style={{ marginBottom: 16 }}>
                         <Text style={globalStyles.label}>Email</Text>
                         <TextInput
                             placeholder="Digite seu email..."
@@ -61,6 +63,10 @@ export default function LoginScreen() {
                         />
                     </View>
 
+                    <TouchableOpacity style={globalStyles.buttonForgetPassword}>
+                        <Text>esqueceu a senha?</Text>
+                    </TouchableOpacity>
+
                     <TouchableOpacity style={globalStyles.button}>
                         <Text
                             style={[globalStyles.textButton, { color: "#fff" }]}
@@ -68,6 +74,14 @@ export default function LoginScreen() {
                             Login
                         </Text>
                     </TouchableOpacity>
+
+                    <View>
+                        <Text style={globalStyles.separator}></Text>
+                    </View>
+
+                    <View style={globalStyles.textLoginSoial}>
+                        <Text>ou login com</Text>
+                    </View>
                 </View>
             </View>
         </SafeAreaView>
