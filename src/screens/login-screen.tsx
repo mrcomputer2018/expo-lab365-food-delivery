@@ -82,6 +82,8 @@ export default function LoginScreen() {
                     <View style={globalStyles.textLoginSoial}>
                         <Text>ou login com</Text>
                     </View>
+
+                    <View></View>
                 </View>
             </View>
         </SafeAreaView>
