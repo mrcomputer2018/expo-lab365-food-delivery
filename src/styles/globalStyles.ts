@@ -21,13 +21,15 @@ export const globalStyles = StyleSheet.create({
         color: "#333333",
         fontSize: 16,
         marginBottom: 20,
+        marginTop: 10,
+        opacity: 0.8
     },
     input: {
         fontSize: 16,
         paddingVertical: 14,
         paddingHorizontal: 10,
         borderWidth: 1,
-        borderColor: "#999",
+        borderColor: "#66BE70",
         borderRadius: 6,
         backgroundColor: "#fff",
     },
@@ -52,7 +54,7 @@ export const globalStyles = StyleSheet.create({
     },
     FormGroup: {
         position: "relative",
-        top: "-18%",
+        top: "-13%",
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         width: "100%",
@@ -86,15 +88,16 @@ export const globalStyles = StyleSheet.create({
     },
     socialLogin: {
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
         width: "100%",
+        gap: 20
     },
     buttonSocial: {
         justifyContent: "center",
         alignItems: "center",
-        width: 70,
-        borderColor: "#999",
+        width: 80,
+        borderColor: "#66BE70",
         borderWidth: 1,
         borderRadius: 6,
         paddingVertical: 12,

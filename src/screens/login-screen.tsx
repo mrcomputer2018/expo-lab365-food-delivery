@@ -10,6 +10,8 @@ import { globalStyles } from "../styles/globalStyles";
 import React, { useState } from "react";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import ImageForm from "../components/image-form";
+import TitleForm from "../components/title-form";
+import { StatusBar } from "expo-status-bar";
 
 export default function LoginScreen({ navigation }: any) {
     const [email, setEmail] = useState<string>("");
@@ -23,18 +25,16 @@ export default function LoginScreen({ navigation }: any) {
         <SafeAreaView
             style={[globalStyles.container, { justifyContent: "flex-start" }]}
         >
+            <StatusBar style="light" />
+            
             <ImageForm />
 
             <View style={globalStyles.FormGroup}>
-                <View style={{ marginTop: 20 }}>
-                    <Text style={globalStyles.title}>
-                        Faça o seu login aqui!
-                    </Text>
-
-                    <Text style={globalStyles.description}>
-                        Seja bem-vindo de volta.
-                    </Text>
-                </View>
+                <TitleForm
+                    title="Faça o seu login aqui!"
+                    subtitle="Seja bem-vindo de volta."
+                />
+                
                 <View>
                     <View style={{ marginBottom: 16 }}>
                         <Text style={globalStyles.label}>Email</Text>
@@ -89,16 +89,6 @@ export default function LoginScreen({ navigation }: any) {
                             <Text>
                                 <AntDesign
                                     name="google"
-                                    size={22}
-                                    color="black"
-                                />
-                            </Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={globalStyles.buttonSocial}>
-                            <Text>
-                                <AntDesign
-                                    name="facebook-square"
                                     size={22}
                                     color="black"
                                 />
