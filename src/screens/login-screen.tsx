@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import ImageForm from "../components/image-form";
 import TitleForm from "../components/title-form";
+import { StatusBar } from "expo-status-bar";
 
 export default function LoginScreen({ navigation }: any) {
     const [email, setEmail] = useState<string>("");
@@ -24,11 +25,13 @@ export default function LoginScreen({ navigation }: any) {
         <SafeAreaView
             style={[globalStyles.container, { justifyContent: "flex-start" }]}
         >
+            <StatusBar style="light" />
+            
             <ImageForm />
 
             <View style={globalStyles.FormGroup}>
 
-                <TitleForm />
+                <TitleForm title="Faça o seu login aqui!" subtitle="Seja bem-vindo de volta." />
 
                 <View>
                     <View style={{ marginBottom: 16 }}>
