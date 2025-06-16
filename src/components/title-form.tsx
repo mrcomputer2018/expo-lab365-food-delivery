@@ -3,7 +3,7 @@ import { globalStyles } from "../styles/globalStyles";
 
 export default function TitleForm() {
     return (
-        <View style={{ marginTop: 20 }}>
+        <View style={{ marginTop: 50 }}>
             <Text style={globalStyles.title}>Faça o seu login aqui!</Text>
 
             <Text style={globalStyles.description}>

@@ -20,7 +20,11 @@ export default function PublicStack() {
                 options={{ headerShown: false }}
             />
 
-            <Stack.Screen name="Signup" component={SignupScreen} />
+            <Stack.Screen
+                name="Signup"
+                component={SignupScreen}
+                options={{ headerShown: false }}
+            />
         </Stack.Navigator>
     );
 }

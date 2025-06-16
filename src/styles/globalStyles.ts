@@ -21,6 +21,8 @@ export const globalStyles = StyleSheet.create({
         color: "#333333",
         fontSize: 16,
         marginBottom: 20,
+        opacity: 0.7,
+        marginTop: 10,
     },
     input: {
         fontSize: 16,
@@ -52,7 +54,7 @@ export const globalStyles = StyleSheet.create({
     },
     FormGroup: {
         position: "relative",
-        top: "-18%",
+        top: "-13%",
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         width: "100%",
@@ -86,9 +88,10 @@ export const globalStyles = StyleSheet.create({
     },
     socialLogin: {
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
         width: "100%",
+        gap:20
     },
     buttonSocial: {
         justifyContent: "center",
