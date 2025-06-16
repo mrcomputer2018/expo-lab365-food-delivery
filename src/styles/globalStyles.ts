@@ -84,4 +84,28 @@ export const globalStyles = StyleSheet.create({
         alignItems: "center",
         marginHorizontal: "auto",
     },
+    socialLogin: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        width: "100%",
+    },
+    buttonSocial: {
+        justifyContent: "center",
+        alignItems: "center",
+        width: 70,
+        borderColor: "#999",
+        borderWidth: 1,
+        borderRadius: 6,
+        paddingVertical: 12,
+        backgroundColor: "#fff",
+    },
+    areaButtonSignup: {
+        flexDirection: "row",
+        marginTop: 40,
+        justifyContent: "center",
+    },
+    textSignup: {
+        fontSize: 16,
+    },
 });

@@ -7,22 +7,23 @@ import {
     TouchableOpacity,
 } from "react-native";
 import { globalStyles } from "../styles/globalStyles";
-import { useState } from "react";
+import React, { useState } from "react";
+import { AntDesign, Feather } from "@expo/vector-icons";
+import ImageForm from "../components/image-form";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }: any) {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+
+    function handleNavigateToSignup() {
+        navigation.navigate("Signup");
+    }
 
     return (
         <SafeAreaView
             style={[globalStyles.container, { justifyContent: "flex-start" }]}
         >
-            <View>
-                <Image
-                    source={require("../../assets/background.jpeg")}
-                    style={globalStyles.imageTop}
-                />
-            </View>
+            <ImageForm />
 
             <View style={globalStyles.FormGroup}>
                 <View style={{ marginTop: 20 }}>
@@ -83,7 +84,55 @@ export default function LoginScreen() {
                         <Text>ou login com</Text>
                     </View>
 
-                    <View></View>
+                    <View style={globalStyles.socialLogin}>
+                        <TouchableOpacity style={globalStyles.buttonSocial}>
+                            <Text>
+                                <AntDesign
+                                    name="google"
+                                    size={22}
+                                    color="black"
+                                />
+                            </Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={globalStyles.buttonSocial}>
+                            <Text>
+                                <AntDesign
+                                    name="facebook-square"
+                                    size={22}
+                                    color="black"
+                                />
+                            </Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={globalStyles.buttonSocial}>
+                            <Text>
+                                <Feather
+                                    name="github"
+                                    size={22}
+                                    color="black"
+                                />
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={globalStyles.areaButtonSignup}>
+                        <Text style={globalStyles.textSignup}>
+                            Não tem uma conta?
+                        </Text>
+                        <TouchableOpacity onPress={handleNavigateToSignup}>
+                            <Text
+                                style={{
+                                    color: "#66BE70",
+                                    fontSize: 16,
+                                    marginLeft: 10,
+                                    fontWeight: "bold",
+                                }}
+                            >
+                                Crie sua conta.
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
         </SafeAreaView>
