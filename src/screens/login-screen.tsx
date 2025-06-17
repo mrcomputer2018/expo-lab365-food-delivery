@@ -12,6 +12,7 @@ import { AntDesign, Feather } from "@expo/vector-icons";
 import ImageForm from "../components/image-form";
 import TitleForm from "../components/title-form";
 import { StatusBar } from "expo-status-bar";
+import FooterForm from "../components/footer-form";
 
 export default function LoginScreen({ navigation }: any) {
     const [email, setEmail] = useState<string>("");
@@ -26,7 +27,7 @@ export default function LoginScreen({ navigation }: any) {
             style={[globalStyles.container, { justifyContent: "flex-start" }]}
         >
             <StatusBar style="light" />
-            
+
             <ImageForm />
 
             <View style={globalStyles.FormGroup}>
@@ -34,7 +35,7 @@ export default function LoginScreen({ navigation }: any) {
                     title="Faça o seu login aqui!"
                     subtitle="Seja bem-vindo de volta."
                 />
-                
+
                 <View>
                     <View style={{ marginBottom: 16 }}>
                         <Text style={globalStyles.label}>Email</Text>
@@ -106,23 +107,12 @@ export default function LoginScreen({ navigation }: any) {
                         </TouchableOpacity>
                     </View>
 
-                    <View style={globalStyles.areaButtonSignup}>
-                        <Text style={globalStyles.textSignup}>
-                            Não tem uma conta?
-                        </Text>
-                        <TouchableOpacity onPress={handleNavigateToSignup}>
-                            <Text
-                                style={{
-                                    color: "#66BE70",
-                                    fontSize: 16,
-                                    marginLeft: 10,
-                                    fontWeight: "bold",
-                                }}
-                            >
-                                Crie sua conta.
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
+                    <FooterForm
+                        action={handleNavigateToSignup}
+                        margintop={40}
+                        title="Não tem uma conta?"
+                        subtitle="Crie sua conta."
+                    />
                 </View>
             </View>
         </SafeAreaView>

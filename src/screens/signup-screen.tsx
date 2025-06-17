@@ -9,6 +9,7 @@ import {
 import { globalStyles } from "../styles/globalStyles";
 import ImageForm from "../components/image-form";
 import TitleForm from "../components/title-form";
+import FooterForm from "../components/footer-form";
 
 export default function SignupScreen({ navigation }: any) {
     const [name, setName] = useState<string>("");
@@ -97,23 +98,12 @@ export default function SignupScreen({ navigation }: any) {
                         </Text>
                     </TouchableOpacity>
 
-                    <View style={[globalStyles.areaButtonSignup, { marginTop: 20 }]}>
-                        <Text style={globalStyles.textSignup}>
-                            Já tem uma conta?
-                        </Text>
-                        <TouchableOpacity onPress={handleNavigateToLogin}>
-                            <Text
-                                style={{
-                                    color: "#66BE70",
-                                    fontSize: 16,
-                                    marginLeft: 10,
-                                    fontWeight: "bold",
-                                }}
-                            >
-                                Faça login.
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
+                    <FooterForm
+                        action={handleNavigateToLogin}
+                        margintop={20}
+                        title="Já tem uma conta?"
+                        subtitle="Faça login"
+                    />
                 </View>
             </View>
         </SafeAreaView>

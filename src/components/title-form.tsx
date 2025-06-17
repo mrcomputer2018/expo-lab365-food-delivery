@@ -6,7 +6,7 @@ interface TitleFormProps {
     subtitle: string;
 }
 
-export default function TitleForm({ title, subtitle} : TitleFormProps) {
+export default function TitleForm({ title, subtitle } : TitleFormProps) {
     return (
         <View style={{ marginTop: 50 }}>
             <Text style={globalStyles.title}>{title}</Text>
