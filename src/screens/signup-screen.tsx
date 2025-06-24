@@ -10,6 +10,7 @@ import { globalStyles } from "../styles/globalStyles";
 import ImageForm from "../components/image-form";
 import TitleForm from "../components/title-form";
 import FooterForm from "../components/footer-form";
+import ButtonForm from "../components/button-form";
 
 export default function SignupScreen({ navigation }: any) {
     const [name, setName] = useState<string>("");
@@ -90,13 +91,7 @@ export default function SignupScreen({ navigation }: any) {
                         />
                     </View>
 
-                    <TouchableOpacity style={globalStyles.button}>
-                        <Text
-                            style={[globalStyles.textButton, { color: "#fff" }]}
-                        >
-                            Cadastrar
-                        </Text>
-                    </TouchableOpacity>
+                    <ButtonForm textButton="Cadastrar" />
 
                     <FooterForm
                         action={handleNavigateToLogin}

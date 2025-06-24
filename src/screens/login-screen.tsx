@@ -13,6 +13,7 @@ import ImageForm from "../components/image-form";
 import TitleForm from "../components/title-form";
 import { StatusBar } from "expo-status-bar";
 import FooterForm from "../components/footer-form";
+import ButtonForm from "../components/button-form";
 
 export default function LoginScreen({ navigation }: any) {
     const [email, setEmail] = useState<string>("");
@@ -69,13 +70,7 @@ export default function LoginScreen({ navigation }: any) {
                         <Text>esqueceu a senha?</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={globalStyles.button}>
-                        <Text
-                            style={[globalStyles.textButton, { color: "#fff" }]}
-                        >
-                            Login
-                        </Text>
-                    </TouchableOpacity>
+                    <ButtonForm textButton="Login" />
 
                     <View>
                         <Text style={globalStyles.separator}></Text>

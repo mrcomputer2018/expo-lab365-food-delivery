@@ -22,7 +22,7 @@ export const globalStyles = StyleSheet.create({
         fontSize: 16,
         marginBottom: 20,
         marginTop: 10,
-        opacity: 0.8
+        opacity: 0.8,
     },
     input: {
         fontSize: 16,
@@ -39,16 +39,17 @@ export const globalStyles = StyleSheet.create({
         marginBottom: 10,
     },
     button: {
+        marginTop: 20,
+    },
+    buttonGradient: {
         width: "100%",
         height: 50,
-        backgroundColor: "#66BE70",
         borderRadius: 6,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 20,
     },
     textButton: {
-        color: " #fff",
+        color: "#fff",
         fontSize: 18,
         fontWeight: "bold",
     },
@@ -91,7 +92,7 @@ export const globalStyles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        gap: 20
+        gap: 20,
     },
     buttonSocial: {
         justifyContent: "center",
