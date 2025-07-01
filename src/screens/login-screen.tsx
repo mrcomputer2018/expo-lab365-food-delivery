@@ -7,6 +7,7 @@ import {
     TouchableOpacity,
 } from "react-native";
 import { globalStyles } from "../styles/globalStyles";
+import { loginStyles as styles } from "../styles/login-styles";
 import React, { useState } from "react";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import ImageForm from "../components/image-form";
@@ -14,10 +15,13 @@ import TitleForm from "../components/title-form";
 import { StatusBar } from "expo-status-bar";
 import FooterForm from "../components/footer-form";
 import ButtonForm from "../components/button-form";
+import Checkbox from "expo-checkbox";
+import LoginForm from "../components/login-form";
 
 export default function LoginScreen({ navigation }: any) {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [isChecked, setChecked] = useState<boolean>(false);
 
     function handleNavigateToSignup() {
         navigation.navigate("Signup");
@@ -38,37 +42,32 @@ export default function LoginScreen({ navigation }: any) {
                 />
 
                 <View>
-                    <View style={{ marginBottom: 16 }}>
-                        <Text style={globalStyles.label}>Email</Text>
-                        <TextInput
-                            placeholder="Digite seu email..."
-                            placeholderTextColor="#999"
-                            style={globalStyles.input}
-                            keyboardType="email-address"
-                            autoCapitalize="none"
-                            autoCorrect={false}
-                            value={email}
-                            onChangeText={setEmail}
-                        />
-                    </View>
+                    <LoginForm />
 
-                    <View>
-                        <Text style={globalStyles.label}>Senha</Text>
-                        <TextInput
-                            placeholder="Digite sua senha..."
-                            placeholderTextColor="#999"
-                            style={globalStyles.input}
-                            keyboardType="email-address"
-                            autoCapitalize="none"
-                            autoCorrect={false}
-                            value={password}
-                            onChangeText={setPassword}
-                        />
+                    <View style={styles.areaForgotPassword}>
+                        <View style={styles.section}>
+                            <Checkbox
+                                value={isChecked}
+                                onValueChange={setChecked}
+                                color={isChecked ? "#66BE70" : undefined}
+                            />
+                            <Text
+                                style={[
+                                    styles.paragraph,
+                                    { marginLeft: 3, color: "#333" },
+                                ]}
+                            >
+                                Lembrar de mim
+                            </Text>
+                        </View>
+                        <TouchableOpacity
+                            style={globalStyles.buttonForgetPassword}
+                        >
+                            <Text style={styles.paragraph}>
+                                esqueceu a senha?
+                            </Text>
+                        </TouchableOpacity>
                     </View>
-
-                    <TouchableOpacity style={globalStyles.buttonForgetPassword}>
-                        <Text>esqueceu a senha?</Text>
-                    </TouchableOpacity>
 
                     <ButtonForm textButton="Login" />
 
