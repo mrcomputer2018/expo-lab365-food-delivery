@@ -1,10 +1,9 @@
 import {
     View,
     Text,
-    SafeAreaView,
-    Image,
-    TextInput,
     TouchableOpacity,
+    KeyboardAvoidingView,
+    Platform,
 } from "react-native";
 import { globalStyles } from "../styles/globalStyles";
 import { loginStyles as styles } from "../styles/login-styles";
@@ -19,8 +18,6 @@ import Checkbox from "expo-checkbox";
 import LoginForm from "../components/login-form";
 
 export default function LoginScreen({ navigation }: any) {
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
     const [isChecked, setChecked] = useState<boolean>(false);
 
     function handleNavigateToSignup() {
@@ -28,8 +25,10 @@ export default function LoginScreen({ navigation }: any) {
     }
 
     return (
-        <SafeAreaView
+        <KeyboardAvoidingView
             style={[globalStyles.container, { justifyContent: "flex-start" }]}
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            keyboardVerticalOffset={0}
         >
             <StatusBar style="light" />
 
@@ -109,6 +108,6 @@ export default function LoginScreen({ navigation }: any) {
                     />
                 </View>
             </View>
-        </SafeAreaView>
+        </KeyboardAvoidingView>
     );
 }

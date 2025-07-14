@@ -55,7 +55,7 @@ export const globalStyles = StyleSheet.create({
     },
     FormGroup: {
         position: "relative",
-        top: "-13%",
+        top: "-16%",
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         width: "100%",
