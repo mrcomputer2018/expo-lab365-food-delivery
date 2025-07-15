@@ -15,5 +15,11 @@ export const loginStyles = StyleSheet.create({
     paragraph: {
         color: "#66BE70",
         fontSize: 16
-    }
+    },
+    inputIcon: {
+        position: "absolute",
+        top: 47,
+        left: 10,
+        zIndex: 1,
+    },
 })

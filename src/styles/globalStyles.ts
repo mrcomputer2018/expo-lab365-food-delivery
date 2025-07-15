@@ -27,7 +27,7 @@ export const globalStyles = StyleSheet.create({
     input: {
         fontSize: 16,
         paddingVertical: 14,
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
         borderWidth: 1,
         borderColor: "#66BE70",
         borderRadius: 6,
@@ -111,5 +111,11 @@ export const globalStyles = StyleSheet.create({
     },
     textSignup: {
         fontSize: 16,
+    },
+    errorText: {
+        fontSize: 14,
+        textAlign: "left",
+        color: "red",
+        marginTop: 4,
     },
 });
