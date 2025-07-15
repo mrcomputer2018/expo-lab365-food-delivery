@@ -1,25 +1,14 @@
-import { useState } from "react";
 import {
     SafeAreaView,
     View,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    ScrollView,
 } from "react-native";
 import { globalStyles } from "../styles/globalStyles";
 import ImageForm from "../components/image-form";
 import TitleForm from "../components/title-form";
 import FooterForm from "../components/footer-form";
-import ButtonForm from "../components/button-form";
 import RegisterForm from "../components/register-form";
 
 export default function SignupScreen({ navigation }: any) {
-    const [name, setName] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [confirmPassword, setConfirmPassword] = useState<string>("");
-
     function handleNavigateToLogin() {
         navigation.navigate("Login");
     }
