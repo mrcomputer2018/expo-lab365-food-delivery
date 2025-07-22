@@ -33,6 +33,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             if (storageData) {
                 setUser(storageData);
             }
+
+            setLoading(false);
         }
 
         loadStorageData();

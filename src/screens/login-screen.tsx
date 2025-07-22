@@ -15,8 +15,6 @@ import FooterForm from "../components/footer-form";
 import LoginForm from "../components/login-form";
 
 export default function LoginScreen({ navigation }: any) {
-    const [isChecked, setChecked] = useState<boolean>(false);
-
     function handleNavigateToSignup() {
         navigation.navigate("Signup");
     }
@@ -25,7 +23,7 @@ export default function LoginScreen({ navigation }: any) {
         <KeyboardAvoidingView
             style={[globalStyles.container, { justifyContent: "flex-start" }]}
             behavior={Platform.OS === "ios" ? "padding" : "height"}
-            keyboardVerticalOffset={0}
+            keyboardVerticalOffset={100}
         >
             <StatusBar style="light" />
 
