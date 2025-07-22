@@ -1,13 +1,17 @@
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, ActivityIndicator } from "react-native";
 import { globalStyles } from "../styles/globalStyles";
 import { LinearGradient } from "expo-linear-gradient";
 import { ButtonFormProps } from "../types/button-types";
+import { useAuth } from "../hook/use-auth";
 
 export default function ButtonForm({
     textButton,
     action,
     withButton,
 }: ButtonFormProps) {
+    
+    const { loading } = useAuth();
+
     return (
         <TouchableOpacity
             style={[globalStyles.button, { width: withButton }]}
@@ -19,7 +23,11 @@ export default function ButtonForm({
                 end={{ x: 1, y: 1 }}
                 style={globalStyles.buttonGradient}
             >
-                <Text style={globalStyles.textButton}>{textButton}</Text>
+                {loading ? (
+                    <ActivityIndicator color="#fff" />
+                ) : (
+                    <Text style={globalStyles.textButton}>{textButton}</Text>
+                )}
             </LinearGradient>
         </TouchableOpacity>
     );

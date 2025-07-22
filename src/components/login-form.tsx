@@ -9,6 +9,7 @@ import ButtonForm from "./button-form";
 import Checkbox from "expo-checkbox";
 import { Feather } from "@expo/vector-icons";
 import InputIcon from "./input-icon";
+import { useAuth } from "../hook/use-auth";
 
 const loginFormSchema = z.object({
     email: z
@@ -27,6 +28,8 @@ const loginFormSchema = z.object({
 });
 
 export default function LoginForm() {
+    const { signIn } = useAuth();
+    
     const [isChecked, setChecked] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -49,7 +52,9 @@ export default function LoginForm() {
     }
 
     function onSubmit(data: z.infer<typeof loginFormSchema>) {
-        console.log(data);
+
+        signIn(data.email, data.senha);
+
         reset();
     }
 
