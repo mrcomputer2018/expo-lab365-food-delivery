@@ -49,7 +49,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             if (email === "user@user.com" && senha === "12345678") {
                 const userData = {
                     id: "1",
-                    name: "User",
+                    name: "Monica Santos",
                     email: "user@user.com",
                     profile: "user",
                 };
