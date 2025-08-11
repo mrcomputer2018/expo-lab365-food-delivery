@@ -1,20 +1,36 @@
 import { StatusBar } from "expo-status-bar";
-import { View, Text, TouchableOpacity } from "react-native";
+import {
+    View,
+    Text,
+    TouchableOpacity,
+    SafeAreaView,
+    ScrollView,
+} from "react-native";
 import { useAuth } from "../hook/use-auth";
+import { homeStyles } from "../styles/home-styles";
 
 export default function HomeScreen() {
-    const { signOut } = useAuth();
+    const {  user } = useAuth();
 
-    const handleSignOut = () => {
-        signOut();
-    };
     return (
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <SafeAreaView style={homeStyles.container}>
             <StatusBar style="auto" />
-            <Text style={{ fontSize: 24, fontWeight: "bold" }}>Pagina Home</Text>
-            <TouchableOpacity style={{ marginTop: 20 }} onPress={handleSignOut}>
-                <Text style={{ fontSize: 18, color: "blue" }}>Sair</Text>
-            </TouchableOpacity>
-        </View>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                contentInsetAdjustmentBehavior="automatic"
+                style={homeStyles.scroll}
+                contentContainerStyle={{
+                    flexGrow: 1,
+                    paddingTop: 20,
+                    paddingBottom: 20,
+                }}
+                nestedScrollEnabled={true}
+            >
+                <View style={homeStyles.containerRow}>
+                    <Text>Seja bem-vindo(a),</Text>
+                    <Text>{user?.name ? user.name : "Visitante"}</Text>
+                </View>
+            </ScrollView>
+        </SafeAreaView>
     );
 }

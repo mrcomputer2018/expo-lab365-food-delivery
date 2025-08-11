@@ -4,6 +4,7 @@ import SearchScreen from "../screens/search-screnn";
 import Material from "@expo/vector-icons/MaterialCommunityIcons"
 import HeaderLaft from "../components/header-left";
 import HeaderRight from "../components/header-right";
+import ProfileScreen from "../screens/profile-screen";
 
 export default function HomeBottomTab() {
     const BottomTab = createBottomTabNavigator();
@@ -31,7 +32,7 @@ export default function HomeBottomTab() {
                 options={{
                     headerShown: true,
                     tabBarIcon: ({color}) => (
-                        <Material nane="home-outline" color={color} size={28} />
+                        <Material name="home-outline" color={color} size={28} />
                     )
                 }}
             />
@@ -39,9 +40,19 @@ export default function HomeBottomTab() {
                 name="Search"
                 component={SearchScreen}
                 options={{
-                    headerShown: false,
+                    headerShown: true,
                     tabBarIcon: ({color}) => (
-                        <Material nane="magnify" color={color} size={28} />
+                        <Material name="magnify" color={color} size={28} />
+                    )
+                }}
+            />
+            <BottomTab.Screen
+                name="Profile"
+                component={ProfileScreen}
+                options={{
+                    headerShown: true,
+                    tabBarIcon: ({color}) => (
+                        <Material name="account" color={color} size={28} />
                     )
                 }}
             />
