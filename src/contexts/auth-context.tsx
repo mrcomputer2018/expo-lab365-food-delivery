@@ -47,16 +47,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
         setTimeout(async () => {
             if (email === "user@user.com" && senha === "12345678") {
-                const userData = {
+                const newUser = {
                     id: "1",
                     name: "Monica Santos",
                     email: "user@user.com",
                     profile: "user",
                 };
+                
+                setUser(newUser);
 
-                setUser(userData);
-
-                await storeData("@user", JSON.stringify(userData));
+                await storeData("@user", newUser);
 
                 setLoading(false);
 

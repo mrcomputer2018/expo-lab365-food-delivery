@@ -8,6 +8,9 @@ import {
 } from "react-native";
 import { useAuth } from "../hook/use-auth";
 import { homeStyles } from "../styles/home-styles";
+import TitleHomeScreen from "../components/title-home-screen";
+import SearchInput from "../components/search-input";
+import ScrollTitle from "../components/scroll-title";
 
 export default function HomeScreen() {
     const {  user } = useAuth();
@@ -26,10 +29,12 @@ export default function HomeScreen() {
                 }}
                 nestedScrollEnabled={true}
             >
-                <View style={homeStyles.containerRow}>
-                    <Text>Seja bem-vindo(a),</Text>
-                    <Text>{user?.name ? user.name : "Visitante"}</Text>
-                </View>
+                <TitleHomeScreen />
+
+                <SearchInput />
+
+                <ScrollTitle />
+               
             </ScrollView>
         </SafeAreaView>
     );
