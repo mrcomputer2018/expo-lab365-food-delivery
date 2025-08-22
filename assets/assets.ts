@@ -1,7 +1,7 @@
 import { Assets } from "./assets.d";
 
 export const assets: Assets = {
-    bannerImage: require("./banner1.png"),
+    banner1: require("./banner1.png"),
     banner2: require("./banner2.png"),
     bellaItalia: require("./bella-italia.jpeg"),
     tokioSushi: require("./tokio-sushi.png"),

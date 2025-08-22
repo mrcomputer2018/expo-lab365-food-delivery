@@ -1,19 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import {
-    View,
-    Text,
-    TouchableOpacity,
     SafeAreaView,
     ScrollView,
 } from "react-native";
-import { useAuth } from "../hook/use-auth";
 import { homeStyles } from "../styles/home-styles";
 import TitleHomeScreen from "../components/title-home-screen";
 import SearchInput from "../components/search-input";
-import ScrollTitle from "../components/scroll-title";
+import BannerHomeScreen from "../components/banner-home-screen";
+import ScrollTitleTtitle from "../components/scrolltitle/scroll-tittle-title";
+import ScrollTitleButton from "../components/scrolltitle/scroll-title-button";
+import { ScrollTitle } from "../components/scrolltitle/index";
 
 export default function HomeScreen() {
-    const {  user } = useAuth();
 
     return (
         <SafeAreaView style={homeStyles.container}>
@@ -31,10 +29,14 @@ export default function HomeScreen() {
             >
                 <TitleHomeScreen />
 
+                <BannerHomeScreen />
+
                 <SearchInput />
 
-                <ScrollTitle />
-               
+                <ScrollTitle.Root>
+                    <ScrollTitle.Title text="Categorias" />
+                    <ScrollTitle.Button onPress={() =>console.log("Clicado!!!")}/>
+                </ScrollTitle.Root>
             </ScrollView>
         </SafeAreaView>
     );

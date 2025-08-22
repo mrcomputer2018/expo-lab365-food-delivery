@@ -14,7 +14,7 @@ declare module "*.jpeg" {
 }
 
 export interface Assets {
-    bannerImage: any;
+    banner1: any;
     banner2: any;
     bellaItalia: any;
     tokioSushi: any;
