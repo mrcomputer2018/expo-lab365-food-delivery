@@ -19,6 +19,7 @@ export default function HomeBottomTab() {
                 animation: "shift",
                 tabBarStyle: {
                     height: 60,
+                    borderTopColor: "#66BE70"
                 },
                 tabBarLabelStyle: { fontSize: 12 },
                 headerRight: () => <HeaderRight />,

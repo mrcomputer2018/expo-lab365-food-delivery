@@ -10,6 +10,7 @@ import BannerHomeScreen from "../components/banner-home-screen";
 import ScrollTitleTtitle from "../components/scrolltitle/scroll-tittle-title";
 import ScrollTitleButton from "../components/scrolltitle/scroll-title-button";
 import { ScrollTitle } from "../components/scrolltitle/index";
+import ScrollCategories from "../components/scroll-categories";
 
 export default function HomeScreen() {
 
@@ -37,6 +38,8 @@ export default function HomeScreen() {
                     <ScrollTitle.Title text="Categorias" />
                     <ScrollTitle.Button onPress={() =>console.log("Clicado!!!")}/>
                 </ScrollTitle.Root>
+
+                <ScrollCategories />
             </ScrollView>
         </SafeAreaView>
     );
