@@ -11,14 +11,15 @@ interface RestaurantsOpenCardProps {
     rating: string;
     deliveryInfo: string;
     time: string;
-    image: assets.roseGarden;
+    image: string;
 }
 
-export default function RestaurantsOpenCard() {
+export default function RestaurantsOpenCard({...props}: RestaurantsOpenCardProps) {
     return (
         <View style={styles.restaurantCard}>
+
             <Image
-                source={assets.roseGarden}
+                source={{ uri: props.image }}
                 style={styles.image}
                 resizeMode="cover"
             />
@@ -26,9 +27,9 @@ export default function RestaurantsOpenCard() {
             <View style={styles.infoSection}>
                 <View>
                     <Text style={styles.restaurantName}>
-                        Rose Garden Restaurant
+                        {props.name}
                     </Text>
-                    <Text style={styles.cuisineType}>Cozinha Americana</Text>
+                    <Text style={styles.cuisineType}>{props.cuisine}</Text>
                     <Text style={styles.specialties}>
                         Frango - Burgers - Wings
                     </Text>
@@ -37,14 +38,14 @@ export default function RestaurantsOpenCard() {
                 <View style={styles.deliveryInfoSection}>
                     <View style={styles.container}>
                         <Feather name="star" size={12} color="#66BE70" />
-                        <Text style={styles.textInfo}>4.7</Text>
+                        <Text style={styles.textInfo}>{props.rating}</Text>
                     </View>
                     <View>
-                        <Text style={styles.textInfo}>Entrega grátis</Text>
+                        <Text style={styles.textInfo}>{props.deliveryInfo}</Text>
                     </View>
                     <View style={styles.container}>
                         <Feather name="clock" size={12} color="#66BE70" />
-                        <Text style={styles.textInfo}>30 min</Text>
+                        <Text style={styles.textInfo}>{props.time}</Text>
                     </View>
                 </View>
             </View>
