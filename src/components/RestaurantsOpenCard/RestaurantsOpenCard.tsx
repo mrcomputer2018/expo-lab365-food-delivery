@@ -1,5 +1,4 @@
 import { View, Text, Image } from "react-native";
-import { assets } from "../../../assets/assets";
 import { restaurantOpenListStyles as styles } from "../../styles/restaurant-open-list-styles";
 import { Feather } from "@expo/vector-icons";
 
