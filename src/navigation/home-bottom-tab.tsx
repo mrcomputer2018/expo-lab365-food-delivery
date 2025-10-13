@@ -2,9 +2,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/home-screen";
 import SearchScreen from "../screens/search-screnn";
 import Material from "@expo/vector-icons/MaterialCommunityIcons"
-import HeaderLaft from "../components/header-left";
 import HeaderRight from "../components/header-right";
 import ProfileScreen from "../screens/profile-screen";
+import HeaderLeft from "../components/header-left";
+import TestScreen from "../screens/test-screen";
 
 export default function HomeBottomTab() {
     const BottomTab = createBottomTabNavigator();
@@ -23,7 +24,7 @@ export default function HomeBottomTab() {
                 },
                 tabBarLabelStyle: { fontSize: 12 },
                 headerRight: () => <HeaderRight />,
-                headerLeft: () => <HeaderLaft />,
+                headerLeft: () => <HeaderLeft />,
                 headerTitle: "",
             }}
         >
@@ -50,6 +51,17 @@ export default function HomeBottomTab() {
             <BottomTab.Screen
                 name="Profile"
                 component={ProfileScreen}
+                options={{
+                    headerShown: true,
+                    tabBarIcon: ({color}) => (
+                        <Material name="account" color={color} size={28} />
+                    )
+                }}
+            />
+
+            <BottomTab.Screen
+                name="Test"
+                component={TestScreen}
                 options={{
                     headerShown: true,
                     tabBarIcon: ({color}) => (

@@ -16,7 +16,7 @@ export const restaurantOpenListStyles = StyleSheet.create({
     },
     image: {
         width: "100%",
-        height: 180,
+        height: 120,
     },
     infoSection : {
         paddingVertical: 14,

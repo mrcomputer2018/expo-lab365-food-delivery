@@ -43,6 +43,7 @@ export default function RestaurantsOpenList() {
             renderItem={({ item }) => <RestaurantsOpenCard {...item} />}
             keyExtractor={(item) => item.id}
             style={{ marginTop: 10 }}
+            scrollEnabled={false}
         />
     );
 }

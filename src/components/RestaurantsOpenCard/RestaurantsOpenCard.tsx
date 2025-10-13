@@ -16,9 +16,8 @@ interface RestaurantsOpenCardProps {
 export default function RestaurantsOpenCard({...props}: RestaurantsOpenCardProps) {
     return (
         <View style={styles.restaurantCard}>
-
             <Image
-                source={{ uri: props.image }}
+                source={props.image as any }
                 style={styles.image}
                 resizeMode="cover"
             />
