@@ -6,6 +6,7 @@ import HeaderRight from "../components/header-right";
 import ProfileScreen from "../screens/profile-screen";
 import HeaderLeft from "../components/header-left";
 import TestScreen from "../screens/test-screen";
+import NotificationScreen from "../screens/notification-screen";
 
 export default function HomeBottomTab() {
     const BottomTab = createBottomTabNavigator();
@@ -60,8 +61,8 @@ export default function HomeBottomTab() {
             />
 
             <BottomTab.Screen
-                name="Test"
-                component={TestScreen}
+                name="Notificação"
+                component={NotificationScreen}
                 options={{
                     headerShown: true,
                     tabBarIcon: ({color}) => (

@@ -13,4 +13,6 @@ export const assets: Assets = {
     background: require("./background.jpeg"),
     afro: require("./afro.jpg"),
     monicaSantos: require("./monica_santos.jpg"),
+    boizao: require("./boizao.png"),
+    kebabs: require("./the-kebabs.png")
 };

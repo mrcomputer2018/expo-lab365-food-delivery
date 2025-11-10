@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
 
 export const restaurantOpenListStyles = StyleSheet.create({
+    containerCard: {
+        alignItems: "center",
+        justifyContent: "center",
+    },
     restaurantCard: {
         width: 384,
         marginHorizontal: 10,
@@ -41,7 +45,7 @@ export const restaurantOpenListStyles = StyleSheet.create({
     deliveryInfoSection: {
         flexDirection: "row",
         justifyContent: "space-between",
-        marginTop: 10,
+        marginTop: 6,
     },
     container: {
         flexDirection: "row",
@@ -51,6 +55,8 @@ export const restaurantOpenListStyles = StyleSheet.create({
     textInfo: {
         color: "#666",
         opacity: 0.8,
+        fontWeight: "bold",
+        fontSize: 16,
     }
 
 });

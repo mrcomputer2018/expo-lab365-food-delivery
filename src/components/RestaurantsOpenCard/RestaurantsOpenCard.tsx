@@ -1,48 +1,38 @@
-import { View, Text, Image } from "react-native";
+import { View, Text } from "react-native";
 import { restaurantOpenListStyles as styles } from "../../styles/restaurant-open-list-styles";
 import { Feather } from "@expo/vector-icons";
+import RestaurantImage from "./restaurant-image";
+import { RestaurantsOpenCardProps } from "../../types/restaurant-types";
+import RestaurantsOpenCardInfoSection from "./restaurant-info-section";
 
-interface RestaurantsOpenCardProps {
-    id: string;
-    name: string;
-    cuisine: string;
-    specialties: string;
-    rating: string;
-    deliveryInfo: string;
-    time: string;
-    image: string;
-}
-
-export default function RestaurantsOpenCard({...props}: RestaurantsOpenCardProps) {
+export default function RestaurantsOpenCard({
+    ...props
+}: RestaurantsOpenCardProps) {
     return (
         <View style={styles.restaurantCard}>
-            <Image
-                source={props.image as any }
-                style={styles.image}
-                resizeMode="cover"
-            />
+            <RestaurantImage image={props.image} />
 
             <View style={styles.infoSection}>
-                <View>
-                    <Text style={styles.restaurantName}>
-                        {props.name}
-                    </Text>
+                <RestaurantsOpenCardInfoSection>
+                    <Text style={styles.restaurantName}>{props.name}</Text>
                     <Text style={styles.cuisineType}>{props.cuisine}</Text>
                     <Text style={styles.specialties}>
-                        Frango - Burgers - Wings
+                        { props.specialties }
                     </Text>
-                </View>
+                </RestaurantsOpenCardInfoSection>
 
                 <View style={styles.deliveryInfoSection}>
                     <View style={styles.container}>
-                        <Feather name="star" size={12} color="#66BE70" />
+                        <Feather name="star" size={16} color="#66BE70" />
                         <Text style={styles.textInfo}>{props.rating}</Text>
                     </View>
                     <View>
-                        <Text style={styles.textInfo}>{props.deliveryInfo}</Text>
+                        <Text style={styles.textInfo}>
+                            {props.deliveryInfo}
+                        </Text>
                     </View>
                     <View style={styles.container}>
-                        <Feather name="clock" size={12} color="#66BE70" />
+                        <Feather name="clock" size={16} color="#66BE70" />
                         <Text style={styles.textInfo}>{props.time}</Text>
                     </View>
                 </View>

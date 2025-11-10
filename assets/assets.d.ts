@@ -26,4 +26,6 @@ export interface Assets {
     background: any;
     afro: any;
     monicaSantos: any;
+    boizao: any;
+    kebabs: any
 }
