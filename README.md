@@ -24,6 +24,20 @@
 
 O foco do projeto é aplicar, na prática, conceitos essenciais do ecossistema React Native/Expo: navegação em pilha e abas, gerenciamento de estado global via Context API, formulários controlados com validação robusta e persistência de sessão local.
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="./.github/screenshots/01-entry.jpg" width="180" alt="Tela de entrada" />
+  <img src="./.github/screenshots/02-login.jpg" width="180" alt="Tela de login" />
+  <img src="./.github/screenshots/03-signup.jpg" width="180" alt="Tela de cadastro" />
+  <img src="./.github/screenshots/04-home.jpg" width="180" alt="Tela inicial autenticada" />
+  <img src="./.github/screenshots/05-profile.jpg" width="180" alt="Tela de perfil" />
+</p>
+
+<p align="center">
+  <em>Entrada · Login · Cadastro · Home · Perfil</em>
+</p>
+
 ## ✨ Funcionalidades
 
 - **Onboarding** — tela de entrada com identidade visual da marca
