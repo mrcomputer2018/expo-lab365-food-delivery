@@ -1,97 +1,60 @@
 import { StatusBar } from "expo-status-bar";
-import {
-    View,
-    Text,
-    StyleSheet,
-    ImageBackground,
-    Image,
-    TouchableOpacity,
-} from "react-native";
+import { SafeAreaView, ScrollView } from "react-native";
+import { homeStyles } from "../styles/home-styles";
+import TitleHomeScreen from "../components/title-home-screen";
+import SearchInput from "../components/search-input";
+import BannerHomeScreen from "../components/banner-home-screen";
+import { ScrollTitle } from "../components/scrolltitle/index";
+import ScrollCategories from "../components/scroll-categories";
+import RestaurantsOpenList from "../components/restaurants-open-list";
 
-export default function HomeScreen({ navigation }: any) {
-    function handleNavigationToLogin() {
-        navigation.navigate("Login");
-    }
+export default function HomeScreen() {
+       return (
+        <SafeAreaView style={homeStyles.container}>
+            <StatusBar style="auto" />
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                contentInsetAdjustmentBehavior="automatic"
+                style={homeStyles.scroll}
+                contentContainerStyle={{
+                    flexGrow: 1,
+                    paddingTop: 20,
+                    paddingBottom: 20,
+                }}
+                nestedScrollEnabled={true}
+            >
+                <TitleHomeScreen />
 
-    return (
-        <ImageBackground
-            source={require("../../assets/background.jpeg")}
-            style={styles.container}
-        >
-            <StatusBar style="light" />
+                <BannerHomeScreen />
 
-            <View style={styles.areaText}>
-                <Image
-                    source={require("../../assets/logotipo.png")}
-                    style={styles.logo}
-                />
+                <SearchInput />
 
-                <Text style={styles.subtitle}>Bem-vindo ao</Text>
+                <ScrollTitle.Root>
+                    <ScrollTitle.Title text="Categorias" />
+                    <ScrollTitle.Button
+                        onPress={() => console.log("Clicado!!!")}
+                    />
+                </ScrollTitle.Root>
 
-                <Text style={styles.title}>NextBite Food</Text>
+                <ScrollCategories />
 
-                <Text style={styles.description}>
-                    O futuro da sua próxima refeição
-                </Text>
+                <ScrollTitle.Root>
+                    <ScrollTitle.Title text="⭐ Restaurantes abertos" />
+                    <ScrollTitle.Button
+                        onPress={() => console.log("Clicado!!!")}
+                    />
+                </ScrollTitle.Root>
 
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={handleNavigationToLogin}
-                >
-                    <Text style={styles.textButton}>Entrar</Text>
-                </TouchableOpacity>
-            </View>
-        </ImageBackground>
+                <RestaurantsOpenList />
+
+                <ScrollTitle.Root>
+                    <ScrollTitle.Title text="Destaques do dia" />
+                    <ScrollTitle.Button
+                        onPress={() => console.log("Clicado!!!")}
+                    />
+                </ScrollTitle.Root>
+                
+            </ScrollView>
+        </SafeAreaView>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    areaText: {
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    title: {
-        fontSize: 36,
-        fontWeight: "bold",
-        color: "#fff",
-        textAlign: "center",
-        marginBottom: 10,
-    },
-    logo: {
-        width: 200,
-        height: 200,
-        borderRadius: 100,
-        marginBottom: 20,
-    },
-    subtitle: {
-        fontSize: 26,
-        color: "#fff",
-        textAlign: "center",
-        marginBottom: 30,
-    },
-    description: {
-        fontSize: 18,
-        color: "#fff",
-        textAlign: "center",
-        marginBottom: 30,
-    },
-    button: {
-        width: 280,
-        height: 50,
-        backgroundColor: "#66BE70",
-        borderRadius: 16,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 20,
-    },
-    textButton: {
-        color: "#fff",
-        fontSize: 18,
-        fontWeight: "bold",
-    },
-});
